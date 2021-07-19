@@ -21,6 +21,7 @@
   "homepage": "https://github.com/warintorn1990/practice-nodejs-express#readme",
   "dependencies": {
     "express": "^4.17.1",
+    "moment": "^2.29.1",
     "nodemon": "^2.0.12"
   }
 }

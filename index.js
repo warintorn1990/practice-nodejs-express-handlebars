@@ -1,6 +1,21 @@
 const express = require('express');
 const app = express();
 const path = require('path');
+const users = require('./Users');
+const Logger = require('./logger');
+// const moment = require('moment');
+
+// const logger = (req, res, next) => {
+//     console.log(req.get('host'));
+//     console.log(req.originalUrl);
+//     console.log(moment().format());
+//     next();
+// }
+
+/* init Middleware */
+
+app.use(Logger);
+
 
 // app.get('/', (req, res) => {
 //     res.send("Hello Express");
@@ -9,23 +24,6 @@ const path = require('path');
 // app.get('/', (req, res) => {
 //     res.sendFile(path.join(__dirname, 'public', 'index.html'));
 // });
-const users = [
-    {
-        id: 1,
-        name: 'Arm',
-        email: 'Arm@gmail'
-    },
-    {
-        id: 2,
-        name: 'Art',
-        email: 'Art@gmail'
-    },
-    {
-        id: 1,
-        name: 'May',
-        email: 'May@gmail'
-    }
-]
 
 app.get('/api/users', (req, res) => {
     res.json(users);
